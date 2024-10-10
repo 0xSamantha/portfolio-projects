@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemeCoin Y2K Homepage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body {
+            font-family: 'VT323', monospace;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 4px solid #ff00ff;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff00ff;
+            text-shadow: 2px 2px #00ffff;
+            margin-bottom: 1rem;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .links a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .contract-address {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            word-break: break-all;
+            margin-top: 1rem;
+            border: 2px dashed #ff00ff;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: twinkle 1s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1>Welcome to MemeCoin</h1>
+        <div class="links">
+            <a href="https://twitter.com/memecoin" target="_blank">Twitter</a>
+            <a href="https://t.me/memecoin" target="_blank">Telegram</a>
+            <a href="https://dexscreener.com/ethereum/memecoin" target="_blank">DEXScreener</a>
+        </div>
+        <p style="font-size: 1.5rem; color: #ff00ff;">Contract Address:</p>
+        <div class="contract-address">
+            CA: 0x1234567890123456789012345678901234567890
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 1}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+</body>
+</html>
