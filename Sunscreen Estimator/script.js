@@ -31,7 +31,6 @@ function getLocation() {
   }
   
   function fetchUVIndex(lat, lon) {
-    const apiKey = '4731461c918a7747638177adc96902e5';
     const url = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
   
     fetch(url)
